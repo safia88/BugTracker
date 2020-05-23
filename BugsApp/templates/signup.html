@@ -1,0 +1,46 @@
+{% extends 'basic.html' %}
+
+
+{% block title %}HOME{% endblock %}
+
+{% block style %}
+.jumbotron{
+        padding: 1rem 1rem;
+
+        }
+        .display-4{
+        font-family: "Times New Roman", Times, serif;
+        }
+        .lead{
+        font-family:"Arial-Narrow";
+        }
+        label{
+        font-family:"Arial-Narrow";
+        font-size:10px;
+        color:blue;
+        }
+        body{
+        padding-top:80px;
+        }
+.display-4{
+        font-size:30px;
+        }
+{% endblock %}
+
+{% block body%}
+<div class="container">
+<div class="jumbotron">
+  <div class="container">
+      <h2>Sign Up Here... </h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+  </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'basic.html' %}
+
+
+{% block title %}HOME{% endblock %}
+
+{% block style %}
+body{
+        padding-top:80px;
+        }
+{% endblock %}
+
+{% block body%}
+
+
+<div class="container">
+  <h2>New Ticket</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Assigned To</th>
+        <th>Filled By</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in first %}
+      <tr>
+        <td>{{item.id}}</td>
+        <td><a href="http://localhost:8000/detail/{{item.id}}/"> {{item.title}}</a></td>
+        <td>{{item.assigned_to}}</td>
+        <td>{{item.filed_by}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+    <h2>In Progress Ticket</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Assigned To</th>
+        <th>Filled By</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in second %}
+      <tr>
+        <td>{{item.id}}</td>
+        <td><a href="http://localhost:8000/detail/{{item.id}}/"> {{item.title}}</a></td>
+        <td>{{item.assigned_to}}</td>
+        <td>{{item.filed_by}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+     <h2>Done Ticket</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Assigned To</th>
+        <th>Filled By</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in third %}
+      <tr>
+        <td>{{item.id}}</td>
+        <td><a href="http://localhost:8000/detail/{{item.id}}/"> {{item.title}}</a></td>
+        <td>{{item.assigned_to}}</td>
+        <td>{{item.filed_by}}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

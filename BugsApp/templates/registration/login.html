@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+{% block title %}Login{% endblock %}
+{% block style %}
+.jumbotron {
+            margin-top: 60px!important;
+}
+{% endblock %}
+{% block body%}
+
+
+
+<div class="jumbotron bg-cover ">
+    <div class="overlay"></div>
+        <div class="container">
+            <form  method="post">
+        {{form.as_p}}
+        {%csrf_token%}
+        <button type="submit">Login</button>
+    </form>
+
+        </div>
+
+
+</div>
+{%endblock%}

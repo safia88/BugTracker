@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+
+{% block title %}Ticket Edit{% endblock %}
+
+{% block body%}
+
+<div class="jumbotron bg-cover ">
+    <div class="overlay"></div>
+        <div class="container">
+            <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+    <input type="submit" value="submit">
+
+</form>
+
+        </div>
+
+
+</div>
+
+
+{% endblock %}
