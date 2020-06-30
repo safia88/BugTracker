@@ -1,0 +1,94 @@
+{% extends 'basic.html' %}
+
+
+{% block title %}HOME{% endblock %}
+
+{% block style %}
+body{
+padding-top:80px;
+}
+{% endblock %}
+
+{% block body%}
+
+
+<div class="container" style="margin-top: 65px;">
+    <h2>Filled Ticket</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Assigned To</th>
+                <th>Filled By</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in created_ticket %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td><a href="/ticket/{{item.id}}/"> {{item.title}}</a></td>
+                {% if item.assigned_to is not None%}
+                <td><a href="/user/{{item.assigned_to.id}}/"> {{item.assigned_to}}</a></td>
+                {% else %}
+                <td>{{item.assigned_to}}</td>
+                {% endif %}
+                <td><a href="/user/{{item.filed_by.id}}/"> {{item.filed_by}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Assigned Ticket</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Assigned To</th>
+                <th>Filled By</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in assigned_ticket %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td><a href="/ticket/{{item.id}}/"> {{item.title}}</a></td>
+                {% if item.assigned_to is not None%}
+                <td><a href="/user/{{item.assigned_to.id}}/"> {{item.assigned_to}}</a></td>
+                {% else %}
+                <td>{{item.assigned_to}}</td>
+                {% endif %}
+                <td><a href="/user/{{item.filed_by.id}}/"> {{item.filed_by}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Conmpleted Ticket</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Assigned To</th>
+                <th>Filled By</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in completed_ticket %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td><a href="/ticket/{{item.id}}/"> {{item.title}}</a></td>
+                {% if item.assigned_to is not None%}
+                <td><a href="/user/{{item.assigned_to.id}}/"> {{item.assigned_to}}</a></td>
+                {% else %}
+                <td>{{item.assigned_to}}</td>
+                {% endif %}
+                <td><a href="/user/{{item.filed_by.id}}/"> {{item.filed_by}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
